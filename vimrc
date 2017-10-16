@@ -95,16 +95,21 @@ set updatetime=250
 
 " Ale
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_text_changed = 'never'
 
 " vim-jsx
 let g:jsx_ext_required = 0
 
 " vim-emmet
 let g:user_emmet_leader_key='<C-e>'
-"let g:user_emmet_mode='a'
 let g:user_emmet_settings = {
 \  'javascript.jsx' : {
 \      'extends' : 'js',
 \  },
 \}
+
+" Prettier
+let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
+
