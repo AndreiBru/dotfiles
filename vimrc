@@ -81,3 +81,30 @@ set signcolumn=yes
 let g:gitgutter_realtime=1
 let g:gitgutter_eager=1
 set updatetime=250
+
+" Syntastic
+"let g:syntastic_javascript_checkers = ['eslint']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" Ale
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_lint_on_text_changed = 'never'
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
+" vim-emmet
+let g:user_emmet_leader_key='<C-e>'
+"let g:user_emmet_mode='a'
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'js',
+\  },
+\}
