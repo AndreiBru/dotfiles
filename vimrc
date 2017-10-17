@@ -10,11 +10,17 @@ set lines=35 columns=150
 set number
 set showcmd
 set laststatus=2
+set cpoptions+=$
 
 set hidden
 set history=100
 
 let mapleader=" "
+
+" Cursors
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Dealing with tabs
 filetype indent on
@@ -33,7 +39,7 @@ set incsearch
 " Delete whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Cancel search with ESC
+" Cancel search with space space
 nnoremap <Leader><space> :noh<cr>
 
 " Reload .vimrc with '\s'
@@ -95,7 +101,7 @@ set updatetime=250
 
 " Ale
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-"let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'never'
 
 " vim-jsx
 let g:jsx_ext_required = 0
@@ -110,6 +116,15 @@ let g:user_emmet_settings = {
 
 " Prettier
 let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
+"if !exists('g:airline_symbols')
+  "let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.space = "\ua0"
 
