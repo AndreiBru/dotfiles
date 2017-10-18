@@ -10,7 +10,7 @@ set lines=35 columns=150
 set number
 set showcmd
 set laststatus=2
-set cpoptions+=$
+"set cpoptions+=$
 
 set hidden
 set history=100
@@ -115,6 +115,11 @@ let g:user_emmet_settings = {
 \}
 
 " Prettier
+" print semicolons
+"let g:prettier#config#semi = 'true'
+"let g:prettier#config#bracket_spacing = 'true'
+"let g:prettier#config#trailing_comma = 'none'
+
 let g:prettier#exec_cmd_async = 1
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
