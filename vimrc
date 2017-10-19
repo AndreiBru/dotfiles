@@ -11,6 +11,9 @@ set number
 set showcmd
 set laststatus=2
 "set cpoptions+=$
+set relativenumber
+set ignorecase
+set smartcase
 
 set hidden
 set history=100
@@ -59,10 +62,10 @@ filetype plugin on
 set noshowmode
 
 " NERDtree
-let NERDTreeMapActivateNode='<right>'
+"let NERDTreeMapActivateNode='t'
 let NERDTreeShowHidden=1
 nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>j :NERDTreeFind<CR>
+nmap <leader>m :NERDTreeFind<CR>
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\node_modules$', '\.git$']
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -114,15 +117,15 @@ let g:user_emmet_settings = {
 \  },
 \}
 
-" Prettier
+" Prettier (not working)
 " print semicolons
 "let g:prettier#config#semi = 'true'
 "let g:prettier#config#bracket_spacing = 'true'
 "let g:prettier#config#trailing_comma = 'none'
 
-let g:prettier#exec_cmd_async = 1
+"let g:prettier#exec_cmd_async = 1
 "let g:prettier#autoformat = 0
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1

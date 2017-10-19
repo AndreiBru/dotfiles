@@ -7,17 +7,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +10 src/app/App.js
-badd +1 src/app/components/goals/AddGoalForm.js
-badd +1 src/app/components/goals/FinishedGoals.js
-badd +1 src/app/components/goals/Goals.js
-badd +1 src/app/components/goals/GoalsInProgress.js
-badd +29 src/app/components/goals/NextSteps.js
-badd +0 ./
+badd +133 src/app/components/goals/Goals.js
+badd +28 src/app/components/goals/AddGoalForm.js
+badd +17 src/app/components/common/FormComponents.js
+badd +20 src/lib/goalsServices.js
 argglobal
 silent! argdel *
-argadd ./
-edit src/app/App.js
+argadd .
+edit src/app/components/goals/Goals.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -27,8 +24,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 119 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 118 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 103 + 104) / 208)
+exe 'vert 2resize ' . ((&columns * 104 + 104) / 208)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -39,15 +36,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 133 - ((24 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+133
 normal! 0
 wincmd w
 argglobal
-edit src/app/components/goals/NextSteps.js
+edit src/app/components/goals/AddGoalForm.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -57,15 +54,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 26) / 52)
+let s:l = 130 - ((49 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 013|
+130
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 119 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 118 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 103 + 104) / 208)
+exe 'vert 2resize ' . ((&columns * 104 + 104) / 208)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
