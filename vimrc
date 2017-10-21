@@ -1,5 +1,5 @@
-execute pathogen#infect()
-Helptags
+"execute pathogen#infect()
+"Helptags
 
 filetype on
 syntax on
