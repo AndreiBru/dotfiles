@@ -43,3 +43,9 @@
 [submodule "bundle/colorschemes"]
 	path = pack/bundle/start/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "pack/bundle/start/vim-highlightedyank"]
+	path = pack/bundle/start/vim-highlightedyank
+	url = git@github.com:machakann/vim-highlightedyank.git
+[submodule "pack/bundle/start/vim-surround"]
+	path = pack/bundle/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git

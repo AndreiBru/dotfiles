@@ -1,3 +1,8 @@
+"NEOVIM
+"
+
+set inccommand=nosplit
+
 "execute pathogen#infect()
 "Helptags
 
