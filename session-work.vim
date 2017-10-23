@@ -7,18 +7,27 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 ~/.vimrc
 badd +1 src/app/App.js
-badd +1 ~/Sites/Lateral/horizon-ui
+badd +1 src/app/components/common/FormComponents.js
+badd +1 src/app/components/common/HorizonModal.js
+badd +1 src/app/components/common/InfoBox.js
+badd +1 src/app/components/common/ProgressBar.js
+badd +1 src/app/components/common/Spinner.js
 argglobal
 silent! argdel *
-argadd ~/Sites/Lateral/horizon-ui
-edit src/app/App.js
+argadd .
+edit src/app/components/common/FormComponents.js
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 104 + 104) / 208)
+exe 'vert 2resize ' . ((&columns * 103 + 104) / 208)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -29,12 +38,34 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 26) / 53)
+let s:l = 11 - ((10 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 015|
+11
+normal! 0
+wincmd w
+argglobal
+edit src/app/components/common/Spinner.js
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 104 + 104) / 208)
+exe 'vert 2resize ' . ((&columns * 103 + 104) / 208)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -54,6 +54,10 @@ nnoremap <Leader><space> :noh<cr>
 " Reload .vimrc with '\s'
 map \s :source ~/.vimrc<CR>
 
+" Toggle whitespace characters display
+set listchars=tab:▸\ ,eol:¬,space:.
+nmap \l :set list!<CR>
+
 " CtrlP mappings
 set wildignore+=*/node_modules/*,*.log
 let g:ctrlp_custom_ignore = '\v[\/]\.(git)$'
