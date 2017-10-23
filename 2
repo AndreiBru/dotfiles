@@ -1,3 +1,9 @@
+" Personal Mappings
+nmap <leader>ww :mksession! ~/.vim/session-work.vim<CR>
+nmap <leader>w2 :mksession! ~/.vim/session-vimrc.vim<CR>
+nmap <leader>rr :source ~/.vim/session-work.vim<CR>
+nmap <leader>r2 :source ~/.vim/session-vimrc.vim<CR>
+
 " NEOVIM
 set inccommand=nosplit
 
@@ -120,8 +126,3 @@ let g:prettier#config#single_quote = 'true'
 let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
-
-" ============= Personal Mappings =============
-nmap <leader>ww :mksession! ~/.vim/session-work.vim<CR>
-nmap <leader>rr :source ~/.vim/session-work.vim<CR>
-
