@@ -7,16 +7,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 src/app/App.js
-badd +1 src/app/components/common/FormComponents.js
-badd +1 src/app/components/common/HorizonModal.js
-badd +1 src/app/components/common/InfoBox.js
-badd +1 src/app/components/common/ProgressBar.js
-badd +1 src/app/components/common/Spinner.js
+badd +40 src/app/components/details/Details.js
+badd +73 src/app/components/goals/AddGoalForm.js
+badd +55 src/app/components/common/FormComponents.js
+badd +23 src/app/actions/detailsActions.js
+badd +8 src/app/lib/detailsServices.js
 argglobal
 silent! argdel *
-argadd .
-edit src/app/components/common/FormComponents.js
+argadd ./
+edit src/app/components/details/Details.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -38,15 +37,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((10 * winheight(0) + 26) / 53)
+let s:l = 90 - ((27 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 0
+90
+normal! 014|
 wincmd w
 argglobal
-edit src/app/components/common/Spinner.js
+edit src/app/components/common/FormComponents.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -56,14 +55,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+let s:l = 68 - ((37 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+68
+normal! 027|
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 104 + 104) / 208)
 exe 'vert 2resize ' . ((&columns * 103 + 104) / 208)
 tabnext 1

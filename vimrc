@@ -1,11 +1,13 @@
 " NEOVIM
 set inccommand=nosplit
 
+" Snippets
+nnoremap ,cl :-1read $HOME/.vim/snippets/cl_console.log.txt<CR>t)a
+
 " General
 set nocompatible
 filetype on
 syntax on
-"set colorcolumn=90
 set number
 set showcmd
 set laststatus=2
@@ -14,11 +16,12 @@ set ignorecase
 set smartcase
 set history=100
 
-" Colorscheme, Font
-  " solarized one, it's good
-  "colorscheme solarized
-  "set background=light
+" Colorscheme
+"colorscheme solarized
+"set background=light
 colorscheme OceanicNext
+
+" Font
 set guifont=Meslo\ LG\ M:h18
 
 " Allow hidden buffers to exist
@@ -46,7 +49,11 @@ set hlsearch
 set incsearch
 
 " Delete whitespaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
+
+" Fuzzy Find, Wildmenu
+set path+=**
+set wildmenu
 
 " Cancel search with space space
 nnoremap <Leader><space> :noh<cr>
@@ -57,6 +64,9 @@ map \s :source ~/.vimrc<CR>
 " Toggle whitespace characters display
 set listchars=tab:▸\ ,eol:¬,space:.
 nmap \l :set list!<CR>
+
+" =============== PLUGIN CONFIG ===============
+" =============================================
 
 " CtrlP mappings
 set wildignore+=*/node_modules/*,*.log
@@ -126,6 +136,7 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 
 " ============= Personal Mappings =============
+" =============================================
 nmap <leader>ww :mksession! ~/.vim/session-work.vim<CR>
 nmap <leader>rr :source ~/.vim/session-work.vim<CR>
 
