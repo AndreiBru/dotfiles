@@ -1,5 +1,7 @@
 " NEOVIM
-set inccommand=nosplit
+if exists('&inccommand')
+  set inccommand=split
+endif
 
 " Snippets
 nnoremap ,cl :-1read $HOME/.vim/snippets/cl_console.log.txt<CR>t)a
