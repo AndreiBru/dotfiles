@@ -20,8 +20,10 @@ set smartcase
 set history=100
 
 " Colorscheme
-"colorscheme solarized
-"set background=light
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 colorscheme OceanicNext
 
 " Font
