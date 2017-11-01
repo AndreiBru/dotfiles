@@ -1,3 +1,27 @@
+" MINPAC INIT
+packadd minpac
+call minpac#init()
+
+" MINPAC PLUGINS
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('scrooloose/nerdcommenter')
+call minpac#add('scrooloose/nerdtree')
+call minpac#add('ervandew/supertab')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('mxw/vim-jsx')
+call minpac#add('mattn/emmet-vim')
+call minpac#add('w0rp/ale')
+call minpac#add('prettier/vim-prettier')
+call minpac#add('jeetsukumaran/vim-buffergator')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('flazz/vim-colorschemes')
+call minpac#add('machakann/vim-highlightedyank')
+call minpac#add('tpope/vim-surround')
+
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
 " NEOVIM
 if exists('&inccommand')
   set inccommand=split
@@ -156,3 +180,5 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+
+" set runtimepath=~/.vim,~/.vim/pack/minpac/start/vim-surround,~/.vim/pack/minpac/start/vim-prettier,~/.vim/pack/minpac/start/vim-jsx,~/.vim/pack/minpac/start/vim-javascript,~/.vim/pack/minpac/start/vim-highlightedyank,~/.vim/pack/minpac/start/vim-gitgutter,~/.vim/pack/minpac/start/vim-colorschemes,~/.vim/pack/minpac/start/vim-buffergator,~/.vim/pack/minpac/start/vim-airline-themes,~/.vim/pack/minpac/start/vim-airline,~/.vim/pack/minpac/start/supertab,~/.vim/pack/minpac/start/nerdtree,~/.vim/pack/minpac/start/nerdcommenter,~/.vim/pack/minpac/start/emmet-vim,~/.vim/pack/minpac/start/ctrlp.vim,~/.vim/pack/minpac/start/ale,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,~/.vim/after,~/.vim/pack/minpac/start/ale/after,~/.vim/pack/minpac/start/vim-javascript/after,~/.vim/pack/minpac/start/vim-jsx/after
