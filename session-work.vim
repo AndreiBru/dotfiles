@@ -7,14 +7,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +48 src/app/actions/actions.js
-badd +1 src/app/reducers/upload.js
-badd +1 src/app/actions/uploadActions.js
-badd +6 src/app/lib/uploadServices.js
+badd +1 src/app/components/trends/Trends.js
+badd +0 src/app/components/trends/WasteTreatmentTable.js
 argglobal
 silent! argdel *
 argadd ./
-edit src/app/actions/uploadActions.js
+edit src/app/components/trends/WasteTreatmentTable.js
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -36,15 +34,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 26) / 53)
+let s:l = 11 - ((10 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 0
+11
+normal! 045|
 wincmd w
 argglobal
-edit src/app/reducers/upload.js
+edit src/app/components/trends/Trends.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,14 +52,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 26) / 53)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
+1
 normal! 0
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 104 + 104) / 208)
 exe 'vert 2resize ' . ((&columns * 103 + 104) / 208)
 tabnext 1

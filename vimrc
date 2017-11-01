@@ -8,6 +8,7 @@ nnoremap ,cl :-1read $HOME/.vim/snippets/cl_console.log.txt<CR>t)a
 
 " General
 set nocompatible
+filetype plugin on
 filetype on
 syntax on
 set number
@@ -78,13 +79,15 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " NerdCommenter
-filetype plugin on
+let g:NERDSpaceDelims = 1
 
 " NERDtree
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>m :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\node_modules$', '\.git$']
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
@@ -141,4 +144,13 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " =============================================
 nmap <leader>ww :mksession! ~/.vim/session-work.vim<CR>
 nmap <leader>rr :source ~/.vim/session-work.vim<CR>
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
