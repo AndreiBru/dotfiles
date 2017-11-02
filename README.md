@@ -38,5 +38,6 @@
    After restarting, all the plugins and their settings should be successfully loaded.
 
 ### Windows
-🤔
+1. 🤔
 
+2. 😂
