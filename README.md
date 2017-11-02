@@ -20,7 +20,7 @@
    Otherwise backup your current configuration before so it won't be overwritten.  You can do so by running something like this:
    `mv ~/.vim ~/.vim~ && git clone https://github.com/AndreiBru/dotfiles.git ~/.vim`
 
-2. (optional) Install [NeoVim](https://github.com/neovim/neovim) using your preferred method. Complete installation instructions can be found [here](https://github.com/neovim/neovim/wiki/Installing-Neovim).  
+2. (optional) Install [NeoVim](https://github.com/neovim/neovim) using your preferred method. Complete installation instructions can be *found* [here](https://github.com/neovim/neovim/wiki/Installing-Neovim).  
 
 3. Start up Vim and install plugins.
 
