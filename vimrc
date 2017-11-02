@@ -16,9 +16,10 @@ call minpac#add('prettier/vim-prettier')
 call minpac#add('jeetsukumaran/vim-buffergator')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('flazz/vim-colorschemes')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('tpope/vim-surround')
+call minpac#add('chrisbra/Colorizer')
+call minpac#add('lifepillar/vim-solarized8')
 
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
@@ -48,7 +49,13 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-colorscheme OceanicNext
+" colorscheme MintMellow
+colorscheme solarized8_dark
+
+nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
+    \ ? substitute(g:colors_name, 'dark', 'light', '')
+    \ : substitute(g:colors_name, 'light', 'dark', '')
+    \ )<cr>
 
 " Font
 set guifont=Meslo\ LG\ M:h18
@@ -172,7 +179,7 @@ nmap <leader>ww :mksession! ~/.vim/session-work.vim<CR>
 nmap <leader>rr :source ~/.vim/session-work.vim<CR>
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <leader>ss :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
