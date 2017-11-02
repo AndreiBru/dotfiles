@@ -129,6 +129,11 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
 " Colorscheme
 colorscheme solarized8_dark
 let g:airline_theme='solarized'
