@@ -25,8 +25,12 @@
 
 3. Start up Vim and install plugins.
 
-   The plugins are managed by [minpac](https://github.com/k-takata/minpac) which is already included as a package to this configuration. Please refer to the documentation for more information regarding adding/removing/updating plugins using this package manager but as far as first time installation goes, starting up Vim and running this Ex command should suffice:
+   The plugins are managed by [minpac](https://github.com/k-takata/minpac) which is already included as a package to this configuration. Please refer to the documentation for more information regarding adding/removing/updating plugins using this package manager.
+   
+   As far as first time installation goes, starting up Vim and running this Ex command should suffice:
+
    `:call minpac#update()`
+
    This will automatically download and install the plugins listed in the .vimrc file and generate helptags for them.
 
 4. Restart Vim
