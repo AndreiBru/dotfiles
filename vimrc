@@ -27,6 +27,8 @@ call minpac#add('ervandew/supertab')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('mxw/vim-jsx')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('w0rp/ale')
 call minpac#add('prettier/vim-prettier')
@@ -254,7 +256,7 @@ let g:airline_section_y = ''
 let g:prettier#config#semi = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#single_quote = 'true'
+let g:prettier#config#single_quote = 'false'
 let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync

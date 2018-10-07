@@ -2,19 +2,17 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Sites/Lateral/horizon-ui
+cd ~/Sites/PeakActivity/replatform-packages/apps/replatform
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 src/app/App.js
-badd +4 ~/.vim/colors/MintMellow.vim
-badd +1 ~/Sites/Lateral/horizon-ui
-badd +1 src/app/components/details/Details.js
+badd +1 src/constants.ts
+badd +5 src/components/Common/PageWrapper/PageWrapper.tsx
 argglobal
 silent! argdel *
-argadd ~/Sites/Lateral/horizon-ui
-edit src/app/components/details/Details.js
+argadd .
+edit src/components/Common/PageWrapper/PageWrapper.tsx
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -36,15 +34,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 62 - ((26 * winheight(0) + 26) / 53)
+let s:l = 3 - ((2 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
+3
 normal! 0
 wincmd w
 argglobal
-edit src/app/components/details/Details.js
+edit src/constants.ts
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -54,7 +52,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+let s:l = 1 - ((0 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
